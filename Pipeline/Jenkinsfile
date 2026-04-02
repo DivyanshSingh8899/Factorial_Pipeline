@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/DivyanshSingh8899/Factorial_Pipeline.git'
+            }
+        }
+
+        stage('Run Factorial') {
+            steps {
+                sh 'python3 factorial.py'
+            }
+        }
+    }
+}
